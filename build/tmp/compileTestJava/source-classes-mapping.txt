@@ -1,0 +1,7 @@
+Task3/Task3.java
+ Task3.Words2
+Task1/Task1.java
+ module09.Task1.WriteRead
+Task2/Task2.java
+ Task2.GsonTest
+ Task2.GsonTest$User
