@@ -10,24 +10,22 @@ import java.util.Scanner;
 
 class GsonTest {
     public static void main(String[] args) throws IOException {
-        FileReader reader = new FileReader("/Users/zeka/IdeaProjects/HW-9/src/main/resources/file1.txt");
+        FileReader reader = new FileReader("src/main/resources/file1.txt");
         Scanner sc = new Scanner(reader);
         String nameAge = sc.nextLine();
+while (sc.hasNext()) {
+    User user = new User(sc.next(), sc.nextInt());
+    Gson gson = new GsonBuilder().setPrettyPrinting().create();
+    String json = gson.toJson(user);
+    System.out.println(json);
 
-        User user = new User(sc.next(),sc.nextInt());
-        User user1 = new User(sc.next(),sc.nextInt());
-
-        Gson gson = new GsonBuilder().setPrettyPrinting().create();
-        String json = gson.toJson(user);
-        String json1 = gson.toJson(user1);
-        System.out.println(json + ",\n" + json1);
-
-        File file = new File("/Users/zeka/IdeaProjects/HW-9/src/main/resources/user.json");
-        FileWriter writer = new FileWriter(file);
-        writer.write(json + ",\n" + json1);
-        writer.flush();
-        writer.close();
-
+    File file = new File("src/main/resources/user.json");
+    FileWriter writer = new FileWriter(file);
+    writer.write(json);
+    writer.flush();
+    writer.close();
+}
+sc.close();
     }
     static class User {
         String name;

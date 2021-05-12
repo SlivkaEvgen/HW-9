@@ -14,7 +14,7 @@ class WriteRead {
         readFile();
     }
     public static void readFile() throws IOException {
-        FileReader reader = new FileReader("/Users/zeka/IdeaProjects/HW-9/src/main/resources/file.txt");
+        FileReader reader = new FileReader("src/main/resources/file.txt");
         Scanner sc = new Scanner(reader);
         while (sc.hasNextLine()) {
             String str = sc.nextLine().strip();
@@ -28,7 +28,7 @@ class WriteRead {
     }
 
     private static void writeFile() throws IOException {
-        File file = new File("/Users/zeka/IdeaProjects/HW-9/src/main/resources/file.txt");
+        File file = new File("src/main/resources/file.txt");
         FileWriter writer = new FileWriter(file);
         writer.write("""
                 987-123-4567\s

@@ -12,7 +12,7 @@ import java.util.Scanner;
     }
     public static void main(String[] args) throws FileNotFoundException {
         ArrayList<String> words = new ArrayList<>();
-        FileReader reader = new FileReader("/Users/zeka/IdeaProjects/HW-9/src/main/resources/words.txt");
+        FileReader reader = new FileReader("src/main/resources/words.txt");
         Scanner sc = new Scanner(reader);
         while (sc.hasNext()) {
             words.add(sc.next());
