@@ -1,5 +1,3 @@
- //Gotovo!!!
-
 import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.util.ArrayList;
@@ -21,6 +19,8 @@ import java.util.Scanner;
         for (String word : words) {
             map.put(word, map.getOrDefault(word, 0) + 1);
         }
-        map.forEach((String, Integer) -> System.out.println(String + " " + Integer));
+        map.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
     }
 }
